@@ -2,6 +2,7 @@ from flask import Flask,render_template,request,session
 from flask_bcrypt import Bcrypt,generate_password_hash,check_password_hash
 import sqlite3,base64,mimetypes
 app = Flask(__name__,template_folder="../template")
+app.secret_key = "nati"
 @app.route('/signup',methods=["POST","GET"])
 def signup():
     if request.method == "POST":
@@ -36,7 +37,13 @@ def admin():
 @app.route('/home')
 @app.route('/')
 def home():
-    return render_template("index.html")
+    username = session.get("username")
+    if username:
+        a = username[0].upper()
+        print(a)
+    else:
+        pass    
+    return render_template("index.html",image=a)
 
 @app.route('/add/service',methods=["POST","GET"])
 def service():
@@ -61,13 +68,12 @@ def comment():
     if request.method == "POST":
         username = request.form["username"]
         email = request.form["email"]
-        feedback = request.form["feedback"]
-        phone = request.form["phone"] 
+        feedback = request.form["feedback"] 
         db = sqlite3.connect('../database/database.db')
         cursor = db.cursor()
-        cursor.execute("INSERT INTO comment (username,email,phone,feedback) VALUES(?,?,?,?)",(username,email,phone,feedback))
+        cursor.execute("INSERT INTO comment (username,email,feedback) VALUES(?,?,?)",(username,email,feedback))
         db.commit()
-    return render_template("comment.html")
+    return render_template("index.html")
 
 @app.route('/admin/comments')
 def comments():
