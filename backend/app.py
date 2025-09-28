@@ -1,6 +1,7 @@
-from flask import Flask,render_template,request,session
+from flask import Flask,render_template,request,session,redirect
 from flask_bcrypt import Bcrypt,generate_password_hash,check_password_hash
-import sqlite3,base64,mimetypes
+import sqlite3,base64,mimetypes,uuid
+from datetime import datetime
 app = Flask(__name__,template_folder="../template")
 app.secret_key = "nati"
 @app.route('/signup',methods=["POST","GET"])
@@ -18,6 +19,8 @@ def signup():
         except sqlite3.IntegrityError:
             return '<script>alert("username already exists")</script>'
     return render_template("signup.html")
+
+
 
 @app.route('/admin/login',methods=["POST","GET"])
 def admin():
@@ -45,6 +48,30 @@ def home():
         pass    
     return render_template("index.html",image=a)
 
+@app.route('/admin/dashboard')
+def admindashoboard():
+    db = sqlite3.connect('../database/database.db')
+    cursor = db.cursor()
+    cursor.execute("SELECT  COUNT(*) FROM comment")
+    comment = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM cart")
+    service = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM users")
+    fetch = cursor.fetchall()[0]
+    cursor.execute("SELECT * FROM comment")
+    c = cursor.fetchall()
+    
+    return render_template('admin.html',comment=comment,service=service,users=service,c=c)
+
+@app.route('/delete/<string:id>',methods=["POST","GET"])
+def dele(id):
+    db = sqlite3.connect('../database/database.db')
+    cursor = db.cursor()
+    cursor.execute("DELETE FROM comment WHERE id = ?",(id,))
+    db.commit()
+    return redirect("/admin/dashboard")
+        
+
 @app.route('/add/service',methods=["POST","GET"])
 def service():
     if request.method == "POST":
@@ -68,10 +95,12 @@ def comment():
     if request.method == "POST":
         username = request.form["username"]
         email = request.form["email"]
-        feedback = request.form["feedback"] 
+        feedback = request.form["feedback"]
+        date = datetime.now().strftime("%B %A %y") 
+        id = str(uuid.uuid4())
         db = sqlite3.connect('../database/database.db')
         cursor = db.cursor()
-        cursor.execute("INSERT INTO comment (username,email,feedback) VALUES(?,?,?)",(username,email,feedback))
+        cursor.execute("INSERT INTO comment (username,email,feedback,date,id) VALUES(?,?,?,?,?)",(username,email,feedback,date,id))
         db.commit()
     return render_template("index.html")
 
