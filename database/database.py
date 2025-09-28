@@ -1,0 +1,9 @@
+import sqlite3
+db = sqlite3.connect("database.db")
+cursor = db.cursor()
+cursor.execute("CREATE TABLE IF NOT EXISTS client (service TEXT,name TEXT,email TEXT,phone TEXT,message TEXT)")
+cursor.execute("CREATE TABLE IF NOT EXISTS comment (username TEXT,email TEXT,feedback TEXT)")
+cursor.execute("CREATE TABLE IF NOT EXISTS service (Name TEXT,photo BLOB,price TEXT,per TEXT,des TEXT)")
+cursor.execute("CREATE TABLE IF NOT EXISTS users (username TEXT UNIQUE,password TEXT)")
+cursor.execute("CREATE TABLE IF NOT EXISTS admin (username TEXT,password TEXT)")
+db.commit()
