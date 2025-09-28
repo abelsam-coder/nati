@@ -40,6 +40,7 @@ def admin():
 @app.route('/home')
 @app.route('/')
 def home():
+    a = ''
     username = session.get("username")
     if username:
         a = username[0].upper()
