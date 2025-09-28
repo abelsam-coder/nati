@@ -36,7 +36,7 @@ def admin():
 @app.route('/home')
 @app.route('/')
 def home():
-    return render_template("home.html")
+    return render_template("index.html")
 
 @app.route('/add/service',methods=["POST","GET"])
 def service():

@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EthioGlobal Digital - Marketing Packages</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #3a86ff;
+            --primary-dark: #2563eb;
+            --secondary: #ff006e;
+            --accent: #8338ec;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --transition: all 0.3s ease;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #ffffff;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--primary);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            background: var(--primary-dark);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+            box-shadow: 0 4px 15px rgba(255, 0, 110, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            box-shadow: 0 8px 20px rgba(255, 0, 110, 0.3);
+            background: #d90064;
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.8rem;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding-top: 180px;
+            padding-bottom: 100px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') no-repeat center center/cover;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: white;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        /* Packages Section */
+        .packages {
+            background: var(--light);
+            position: relative;
+        }
+        
+        .package-filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .filter-btn {
+            padding: 10px 25px;
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .package-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .package-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .package-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .package-card:hover .package-image img {
+            transform: scale(1.05);
+        }
+        
+        .package-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .package-header {
+            padding: 25px;
+            background: white;
+            color: var(--dark);
+            text-align: center;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .package-name {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .package-price {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .package-type {
+            font-size: 0.9rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .package-features {
+            padding: 25px;
+        }
+        
+        .package-features ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .package-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .package-features li i {
+            color: var(--primary);
+            margin-right: 15px;
+            font-size: 14px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .package-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .package-cta {
+            text-align: center;
+            padding: 0 25px 30px;
+        }
+        
+        /* Services Section */
+        .services {
+            background: white;
+            position: relative;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            border: 1px solid var(--light-gray);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: rotateY(180deg);
+        }
+        
+        .service-card h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(rgba(58, 134, 255, 0.05) 0%, rgba(131, 56, 236, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 30px;
+            position: relative;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark);
+        }
+        
+        .testimonial-text:before {
+            content: """;
+            font-size: 5rem;
+            color: rgba(58, 134, 255, 0.1);
+            position: absolute;
+            top: -30px;
+            left: -15px;
+            font-family: Arial, sans-serif;
+            line-height: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            border: 3px solid var(--primary);
+        }
+        
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-author-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .testimonial-author-info strong {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author-info div {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .btn-light {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .btn-light:hover {
+            background: #f8f9fa;
+            color: var(--primary);
+        }
+        
+        /* Comment Section Styles */
+        .comments-section {
+            background: var(--light);
+            padding: 100px 0;
+        }
+        
+        .comments-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 40px;
+            margin-top: 20px;
+        }
+        
+        .comment-form {
+            margin-bottom: 40px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: var(--transition);
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.1);
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .comment {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .comment:last-child {
+            border-bottom: none;
+        }
+        
+        .comment-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            margin-right: 12px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .comment-author {
+            font-weight: 600;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .comment-date {
+            color: var(--gray);
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        
+        .comment-content {
+            color: var(--dark);
+            line-height: 1.5;
+            margin-left: 52px;
+        }
+        
+        .alert {
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .alert-success {
+            background-color: rgba(76, 175, 80, 0.1);
+            color: #2e7d32;
+            border: 1px solid rgba(76, 175, 80, 0.2);
+        }
+        
+        .alert-error {
+            background-color: rgba(244, 67, 54, 0.1);
+            color: #c62828;
+            border: 1px solid rgba(244, 67, 54, 0.2);
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            color: var(--gray);
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--gray);
+        }
+        
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--primary);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-social a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                gap: 20px;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 0;
+            }
+            
+            .hero-buttons, .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero {
+                padding-top: 150px;
+                padding-bottom: 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .comments-container {
+                padding: 25px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .package-price {
+                font-size: 1.8rem;
+            }
+            
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comment-content {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-globe-americas"></i>
+                    EthioGlobal Digital
+                </a>
+                <div class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#comments">Feedback</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Elevate Your Brand with Ethiopian Digital Excellence</h1>
+                <p>We help Ethiopian businesses thrive online with tailored digital marketing strategies, social media management, and results-driven campaigns.</p>
+                <div class="hero-buttons">
+                    <a href="#packages" class="btn">Explore Packages</a>
+                    <a href="#contact" class="btn btn-secondary">Get Started Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="section packages" id="packages">
+        <div class="container">
+            <h2 class="section-title">Marketing Packages</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 40px;">We offer specialized digital marketing packages tailored to different industries and needs. Choose between monthly management or per-video content creation.</p>
+            
+            <div class="package-filters">
+                <button class="filter-btn active" data-filter="all">All Packages</button>
+                <button class="filter-btn" data-filter="cafe">Cafe</button>
+                <button class="filter-btn" data-filter="furniture">Furniture</button>
+                <button class="filter-btn" data-filter="shop">Retail Shop</button>
+            </div>
+            
+            <div class="packages-grid">
+                <!-- Cafe Monthly -->
+                <div class="package-card" data-category="cafe">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Cafe Social Media Management">
+                        <div class="package-badge">Most Popular</div>
+                    </div>
+                    <div class="package-header">
+                        <h3 class="package-name">Cafe Monthly Management</h3>
+                        <div class="package-price">5,000 ETB</div>
+                        <div class="package-type">PER MONTH</div>
+                    </div>
+                    <div class="package-features">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Social Media Management</li>
+                            <li><i class="fas fa-check-circle"></i> 15 Posts per Month</li>
+                            <li><i class="fas fa-check-circle"></i> Content Strategy</li>
+                            <li><i class="fas fa-check-circle"></i> Engagement Management</li>
+                            <li><i class="fas fa-check-circle"></i> Basic Analytics Report</li>
+                        </ul>
+                    </div>
+                    <div class="package-cta">
+                        <a href="#contact" class="btn">Select Plan</a>
+                    </div>
+                </div>
+                
+                <!-- Cafe Per Video -->
+                <div class="package-card" data-category="cafe">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Cafe Video Content">
+                    </div>
+                    <div class="package-header">
+                        <h3 class="package-name">Cafe Video Content</h3>
+                        <div class="package-price">2,800 ETB</div>
+                        <div class="package-type">PER VIDEO</div>
+                    </div>
+                    <div class="package-features">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Professional Video Production</li>
+                            <li><i class="fas fa-check-circle"></i> Script Writing</li>
+                            <li><i class="fas fa-check-circle"></i> Editing & Effects</li>
+                            <li><i class="fas fa-check-circle"></i> Platform Optimization</li>
+                            <li><i class="fas fa-check-circle"></i> 1-2 Minute Duration</li>
+                        </ul>
+                    </div>
+                    <div class="package-cta">
+                        <a href="#contact" class="btn">Select Plan</a>
+                    </div>
+                </div>
+                
+                <!-- Furniture Monthly -->
+                <div class="package-card" data-category="furniture">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1493663284031-b7e3aaa4c4b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Furniture Social Media Management">
+                    </div>
+                    <div class="package-header">
+                        <h3 class="package-name">Furniture Monthly Management</h3>
+                        <div class="package-price">7,000 ETB</div>
+                        <div class="package-type">PER MONTH</div>
+                    </div>
+                    <div class="package-features">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Social Media Management</li>
+                            <li><i class="fas fa-check-circle"></i> 20 Posts per Month</li>
+                            <li><i class="fas fa-check-circle"></i> Product Photography</li>
+                            <li><i class="fas fa-check-circle"></i> Targeted Ad Campaigns</li>
+                            <li><i class="fas fa-check-circle"></i> Detailed Analytics Report</li>
+                        </ul>
+                    </div>
+                    <div class="package-cta">
+                        <a href="#contact" class="btn">Select Plan</a>
+                    </div>
+                </div>
+                
+                <!-- Furniture Per Video -->
+                <div class="package-card" data-category="furniture">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Furniture Video Content">
+                    </div>
+                    <div class="package-header">
+                        <h3 class="package-name">Furniture Video Content</h3>
+                        <div class="package-price">3,000 ETB</div>
+                        <div class="package-type">PER VIDEO</div>
+                    </div>
+                    <div class="package-features">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Professional Video Production</li>
+                            <li><i class="fas fa-check-circle"></i> Showcase Product Features</li>
+                            <li><i class="fas fa-check-circle"></i> Drone Shots (if needed)</li>
+                            <li><i class="fas fa-check-circle"></i> Editing & Color Grading</li>
+                            <li><i class="fas fa-check-circle"></i> 2-3 Minute Duration</li>
+                        </ul>
+                    </div>
+                    <div class="package-cta">
+                        <a href="#contact" class="btn">Select Plan</a>
+                    </div>
+                </div>
+                
+                <!-- Shop Monthly -->
+                <div class="package-card" data-category="shop">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1563014959-7aaa83350992?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Retail Shop Social Media Management">
+                    </div>
+                    <div class="package-header">
+                        <h3 class="package-name">Retail Shop Monthly Management</h3>
+                        <div class="package-price">3,800 ETB</div>
+                        <div class="package-type">PER MONTH</div>
+                    </div>
+                    <div class="package-features">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Social Media Management</li>
+                            <li><i class="fas fa-check-circle"></i> 12 Posts per Month</li>
+                            <li><i class="fas fa-check-circle"></i> Promotion Design</li>
+                            <li><i class="fas fa-check-circle"></i> Customer Engagement</li>
+                            <li><i class="fas fa-check-circle"></i> Basic Performance Report</li>
+                        </ul>
+                    </div>
+                    <div class="package-cta">
+                        <a href="#contact" class="btn">Select Plan</a>
+                    </div>
+                </div>
+                
+                <!-- Shop Per Video -->
+                <div class="package-card" data-category="shop">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Retail Shop Video Content">
+                    </div>
+                    <div class="package-header">
+                        <h3 class="package-name">Retail Shop Video Content</h3>
+                        <div class="package-price">2,000 ETB</div>
+                        <div class="package-type">PER VIDEO</div>
+                    </div>
+                    <div class="package-features">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Professional Video Production</li>
+                            <li><i class="fas fa-check-circle"></i> Highlight Products/Services</li>
+                            <li><i class="fas fa-check-circle"></i> Editing & Motion Graphics</li>
+                            <li><i class="fas fa-check-circle"></i> Platform Optimization</li>
+                            <li><i class="fas fa-check-circle"></i> 1-2 Minute Duration</li>
+                        </ul>
+                    </div>
+                    <div class="package-cta">
+                        <a href="#contact" class="btn">Select Plan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 60px;">We offer a comprehensive range of digital marketing services to help your business grow and succeed online.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Social Media Management</h3>
+                    <p>We create and manage engaging content across all social platforms to build your brand presence and connect with your audience.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Content Creation</h3>
+                    <p>Professional video production services tailored for social media platforms to showcase your products and tell your brand story.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Digital Advertising</h3>
+                    <p>Targeted ad campaigns on social media and search engines to reach potential customers and drive conversions.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>SEO Optimization</h3>
+                    <p>Improve your website's visibility in search results to attract more organic traffic and potential customers.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    <h3>Content Strategy</h3>
+                    <p>Develop a comprehensive content plan that aligns with your business goals and resonates with your target audience.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-analytics"></i>
+                    </div>
+                    <h3>Analytics & Reporting</h3>
+                    <p>Track and measure campaign performance with detailed reports and insights to optimize your marketing strategy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 60px;">Hear what our clients have to say about our digital marketing services and the results we've achieved together.</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        EthioGlobal Digital transformed our social media presence. Our engagement has increased by 300% since we started working with them.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah M.">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <strong>Sarah M.</strong>
+                            <div>Cafe Owner, Addis Ababa</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        The video content they created for our furniture store went viral! We've seen a significant increase in store visits and sales.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Michael T.">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <strong>Michael T.</strong>
+                            <div>Furniture Store Owner, Hawassa</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Professional, creative, and results-driven. EthioGlobal Digital understands the Ethiopian market and delivers exceptional value.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="Liya K.">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <strong>Liya K.</strong>
+                            <div>Retail Shop Owner, Dire Dawa</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ready to Grow Your Business?</h2>
+            <p>Contact us today to discuss how our digital marketing packages can help you achieve your business goals. Let's create something amazing together!</p>
+            <div class="cta-buttons">
+                <a href="mailto:ethioglobaldigital11@gmail.com" class="btn btn-light">Email Us</a>
+                <a href="tel:+251916758451" class="btn btn-secondary">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comment Section -->
+    <section class="section comments-section" id="comments">
+        <div class="container">
+            <h2 class="section-title">Customer Feedback</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 40px;">We value your feedback! Share your thoughts and experiences with our services.</p>
+            
+            <div class="comments-container">
+                <div id="alert" class="alert"></div>
+                
+                <form id="commentForm" class="comment-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email (will not be published)</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Your Feedback</label>
+                        <textarea id="comment" name="comment" placeholder="Share your thoughts about our services..." required></textarea>
+                    </div>
+                    <button type="submit" id="submitButton" class="btn">Submit Feedback</button>
+                </form>
+                
+                <div id="commentsList"></div>
+                <div id="loading" class="loading"><div class="spinner"></div> Loading comments...</div>
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    No feedback yet. Be the first to share your thoughts!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>EthioGlobal Digital</h3>
+                    <p>We help Ethiopian businesses grow with tailored digital marketing strategies and solutions. Your success is our mission.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#packages">Packages</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#comments">Feedback</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Social Media Management</a></li>
+                        <li><a href="#">Video Content Creation</a></li>
+                        <li><a href="#">Digital Advertising</a></li>
+                        <li><a href="#">SEO Optimization</a></li>
+                        <li><a href="#">Content Strategy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Hawassa, Ethiopia</li>
+                        <li><i class="fas fa-phone"></i> +251916758451 /+251956808046</li>
+                        <li><i class="fas fa-envelope"></i> ethioglobaldigital11@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sun: 9AM - 5PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 EthioGlobal Digital. All rights reserved. | Designed with  <i class="fas fa-heart" style="color: var(--secondary);"></i> Natnael</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+        
+        // Package Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const packageCards = document.querySelectorAll('.package-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Get filter value
+                const filterValue = button.getAttribute('data-filter');
+                
+                // Show/hide packages based on filter
+                packageCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                }
+            });
+        });
+
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.package-card, .service-card, .testimonial-card');
+            
+            elements.forEach(element => {
+                const position = element.getBoundingClientRect();
+                
+                // If element is in viewport
+                if(position.top < window.innerHeight - 100) {
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Initialize elements for animation
+        document.querySelectorAll('.package-card, .service-card, .testimonial-card').forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+
+        // Listen for scroll events
+        window.addEventListener('scroll', animateOnScroll);
+        // Initial check
+        window.addEventListener('load', animateOnScroll);
+
+        // Comment Section Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const commentForm = document.getElementById('commentForm');
+            const commentsList = document.getElementById('commentsList');
+            const alertDiv = document.getElementById('alert');
+            const loadingDiv = document.getElementById('loading');
+            const emptyState = document.getElementById('emptyState');
+            const submitButton = document.getElementById('submitButton');
+            
+            // Load comments when page loads
+            loadComments();
+            
+            // Handle form submission
+            commentForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(commentForm);
+                const data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    comment: formData.get('comment'),
+                    timestamp: new Date().toISOString(),
+                    id: Date.now().toString() // Simple ID generation
+                };
+                
+                // Validate form
+                if (!data.name || !data.email || !data.comment) {
+                    showAlert('Please fill in all fields', 'error');
+                    return;
+                }
+                
+                if (!isValidEmail(data.email)) {
+                    showAlert('Please enter a valid email address', 'error');
+                    return;
+                }
+                
+                // Show loading state
+                submitButton.disabled = true;
+                submitButton.innerHTML = '<div class="spinner"></div> Submitting...';
+                
+                try {
+                    // For demo purposes, we'll use localStorage
+                    saveCommentToLocalStorage(data);
+                    
+                    // Show success message
+                    showAlert('Feedback submitted successfully!', 'success');
+                    
+                    // Reset form
+                    commentForm.reset();
+                    
+                    // Reload comments
+                    setTimeout(loadComments, 1000);
+                } catch (error) {
+                    console.error('Error saving comment:', error);
+                    showAlert('Error submitting feedback. Please try again.', 'error');
+                } finally {
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = 'Submit Feedback';
+                }
+            });
+            
+            function loadComments() {
+                loadingDiv.style.display = 'block';
+                emptyState.style.display = 'none';
+                commentsList.innerHTML = '';
+                
+                try {
+                    // For demo purposes, we'll use localStorage
+                    const comments = getCommentsFromLocalStorage();
+                    
+                    loadingDiv.style.display = 'none';
+                    
+                    if (comments && comments.length > 0) {
+                        // Sort comments by timestamp (newest first)
+                        comments.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+                        
+                        comments.forEach(comment => {
+                            displayComment(comment);
+                        });
+                    } else {
+                        emptyState.style.display = 'block';
+                    }
+                } catch (error) {
+                    loadingDiv.style.display = 'none';
+                    console.error('Error loading comments:', error);
+                    showAlert('Error loading feedback. Please refresh the page.', 'error');
+                }
+            }
+            
+            function displayComment(comment) {
+                const commentDiv = document.createElement('div');
+                commentDiv.className = 'comment';
+                
+                const date = new Date(comment.timestamp);
+                const formattedDate = date.toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                
+                // Get initial for avatar
+                const initial = comment.name.charAt(0).toUpperCase();
+                
+                commentDiv.innerHTML = `
+                    <div class="comment-header">
+                        <div class="avatar">${initial}</div>
+                        <div>
+                            <span class="comment-author">${escapeHtml(comment.name)}</span>
+                            <span class="comment-date">${formattedDate}</span>
+                        </div>
+                    </div>
+                    <div class="comment-content">${escapeHtml(comment.comment)}</div>
+                `;
+                
+                commentsList.appendChild(commentDiv);
+            }
+            
+            function saveCommentToLocalStorage(comment) {
+                try {
+                    const comments = getCommentsFromLocalStorage();
+                    comments.push(comment);
+                    localStorage.setItem('ethioglobalComments', JSON.stringify(comments));
+                    return true;
+                } catch (error) {
+                    console.error('Error saving to localStorage:', error);
+                    return false;
+                }
+            }
+            
+            function getCommentsFromLocalStorage() {
+                try {
+                    const commentsJSON = localStorage.getItem('ethioglobalComments');
+                    return commentsJSON ? JSON.parse(commentsJSON) : [];
+                } catch (error) {
+                    console.error('Error reading from localStorage:', error);
+                    return [];
+                }
+            }
+            
+            function showAlert(message, type) {
+                alertDiv.textContent = message;
+                alertDiv.className = `alert alert-${type}`;
+                alertDiv.style.display = 'block';
+                
+                // Hide alert after 5 seconds
+                setTimeout(() => {
+                    alertDiv.style.display = 'none';
+                }, 5000);
+            }
+            
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+            
+            function escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+        });
+    </script>
+</body>
+</html>
