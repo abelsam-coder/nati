@@ -6,4 +6,5 @@ cursor.execute("CREATE TABLE IF NOT EXISTS comment (username TEXT,email TEXT,fee
 cursor.execute("CREATE TABLE IF NOT EXISTS service (Name TEXT,photo BLOB,price TEXT,per TEXT,des TEXT)")
 cursor.execute("CREATE TABLE IF NOT EXISTS users (username TEXT UNIQUE,password TEXT)")
 cursor.execute("CREATE TABLE IF NOT EXISTS admin (username TEXT,password TEXT)")
+cursor.execute("CREATE TABLE IF NOT EXISTS cart (username TEXT,service TEXT)")
 db.commit()
