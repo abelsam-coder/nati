@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -748,6 +749,313 @@
             font-size: 0.9rem;
         }
         
+        /* Shopping Cart Styles */
+        .cart-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.15);
+            z-index: 999;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            overflow: hidden;
+        }
+        
+        .cart-container.active {
+            transform: translateY(0);
+        }
+        
+        .cart-header {
+            background: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .cart-title {
+            display: flex;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        .cart-title i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .cart-count {
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+        
+        .cart-toggle {
+            color: white;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .cart-container.active .cart-toggle {
+            transform: rotate(180deg);
+        }
+        
+        .cart-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        
+        .cart-container.active .cart-content {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .cart-items {
+            padding: 20px;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        
+        .cart-item-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .cart-item-details {
+            flex-grow: 1;
+        }
+        
+        .cart-item-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .cart-item-price {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            padding: 5px;
+        }
+        
+        .cart-item-remove:hover {
+            color: var(--secondary);
+        }
+        
+        .cart-footer {
+            padding: 20px;
+            background: var(--light);
+            border-top: 1px solid var(--light-gray);
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        .cart-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .cart-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .cart-btn-checkout {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .cart-btn-checkout:hover {
+            background: var(--primary-dark);
+        }
+        
+        .cart-btn-clear {
+            background: var(--light-gray);
+            color: var(--dark);
+        }
+        
+        .cart-btn-clear:hover {
+            background: #dee2e6;
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--gray);
+        }
+        
+        .empty-cart i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--light-gray);
+        }
+        
+        .select-plan-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+        }
+        
+        .select-plan-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .select-plan-btn.selected {
+            background: #28a745;
+        }
+        
+        /* Notification System */
+        .notification-container {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 1100;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 350px;
+        }
+        
+        .notification {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transform: translateX(400px);
+            transition: transform 0.4s ease;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .notification-success .notification-icon {
+            background: rgba(40, 167, 69, 0.1);
+            color: #28a745;
+        }
+        
+        .notification-info .notification-icon {
+            background: rgba(58, 134, 255, 0.1);
+            color: var(--primary);
+        }
+        
+        .notification-warning .notification-icon {
+            background: rgba(255, 193, 7, 0.1);
+            color: #ffc107;
+        }
+        
+        .notification-content {
+            flex-grow: 1;
+        }
+        
+        .notification-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .notification-message {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .notification-close {
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: var(--transition);
+            padding: 5px;
+        }
+        
+        .notification-close:hover {
+            color: var(--dark);
+        }
+        
         /* Responsive Styles */
         @media (max-width: 992px) {
             .hero h1 {
@@ -812,6 +1120,16 @@
             .comments-container {
                 padding: 25px;
             }
+            
+            .cart-actions {
+                flex-direction: column;
+            }
+            
+            .notification-container {
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
         }
         
         @media (max-width: 576px) {
@@ -835,17 +1153,49 @@
                 margin-left: 0;
                 margin-top: 10px;
             }
-            .a{
-                background:blue;
-                color:rgb(66, 108, 214);
-                border-radius:100px;
-                padding:0em 0.5em;
+            
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
             }
+            
+            .cart-item-image {
+                margin-bottom: 10px;
+            }
+            
+            .cart-item-details {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            .cart-item-remove {
+                align-self: flex-end;
+            }
+        }
+        header{
+            background:rgba(255, 255, 255, 0.176);
+            -webkit-backdrop-filter: blur(7px);
+            backdrop-filter:blur(7px);
+            border-radius:100px;
+            width:90%;
+            
+
+        }
+        center{
+display: flex;
+            align-items:center;
+            justify-content: center;
+            
+            margin-top: 4em;
         }
     </style>
 </head>
 <body>
+    <!-- Notification Container -->
+    <div class="notification-container" id="notificationContainer"></div>
+
     <!-- Header -->
+     <center>
     <header>
         <div class="container">
             <nav class="navbar">
@@ -862,14 +1212,11 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#comments">Feedback</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    {%if image%}
-                    <li class="a"><div class="a" style="background:rgb(96, 96, 238);color:rgb(40, 52, 84);border-radius:100px;padding:0.5em 1em;box-shadow:inset 0 0 2px white,0 0 2px white">{{image}}</div></li>
-                    {%endif%}
                 </ul>
             </nav>
         </div>
     </header>
-
+</center>
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
@@ -919,7 +1266,9 @@
                         </ul>
                     </div>
                     <div class="package-cta">
-                        <a href="#contact" class="btn">Select Plan</a>
+                        <button class="select-plan-btn" data-id="1" data-name="Cafe Monthly Management" data-price="5000" data-image="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80">
+                            <i class="fas fa-plus-circle"></i> Select Plan
+                        </button>
                     </div>
                 </div>
                 
@@ -943,7 +1292,9 @@
                         </ul>
                     </div>
                     <div class="package-cta">
-                        <a href="#contact" class="btn">Select Plan</a>
+                        <button class="select-plan-btn" data-id="2" data-name="Cafe Video Content" data-price="2800" data-image="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80">
+                            <i class="fas fa-plus-circle"></i> Select Plan
+                        </button>
                     </div>
                 </div>
                 
@@ -967,7 +1318,9 @@
                         </ul>
                     </div>
                     <div class="package-cta">
-                        <a href="#contact" class="btn">Select Plan</a>
+                        <button class="select-plan-btn" data-id="3" data-name="Furniture Monthly Management" data-price="7000" data-image="https://images.unsplash.com/photo-1493663284031-b7e3aaa4c4b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80">
+                            <i class="fas fa-plus-circle"></i> Select Plan
+                        </button>
                     </div>
                 </div>
                 
@@ -991,7 +1344,9 @@
                         </ul>
                     </div>
                     <div class="package-cta">
-                        <a href="#contact" class="btn">Select Plan</a>
+                        <button class="select-plan-btn" data-id="4" data-name="Furniture Video Content" data-price="3000" data-image="https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80">
+                            <i class="fas fa-plus-circle"></i> Select Plan
+                        </button>
                     </div>
                 </div>
                 
@@ -1015,7 +1370,9 @@
                         </ul>
                     </div>
                     <div class="package-cta">
-                        <a href="#contact" class="btn">Select Plan</a>
+                        <button class="select-plan-btn" data-id="5" data-name="Retail Shop Monthly Management" data-price="3800" data-image="https://images.unsplash.com/photo-1563014959-7aaa83350992?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80">
+                            <i class="fas fa-plus-circle"></i> Select Plan
+                        </button>
                     </div>
                 </div>
                 
@@ -1039,7 +1396,9 @@
                         </ul>
                     </div>
                     <div class="package-cta">
-                        <a href="#contact" class="btn">Select Plan</a>
+                        <button class="select-plan-btn" data-id="6" data-name="Retail Shop Video Content" data-price="2000" data-image="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80">
+                            <i class="fas fa-plus-circle"></i> Select Plan
+                        </button>
                     </div>
                 </div>
             </div>
@@ -1104,7 +1463,6 @@
         </div>
     </section>
 
-   
     <!-- CTA Section -->
     <section class="cta-section" id="contact">
         <div class="container">
@@ -1126,7 +1484,7 @@
             <div class="comments-container">
                 <div id="alert" class="alert"></div>
                 
-                <form id="commentForm" class="comment-form" method="post" action="/comment">
+                <form id="commentForm" class="comment-form">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="username" required>
@@ -1151,6 +1509,35 @@
         </div>
     </section>
 
+    <!-- Shopping Cart -->
+    <div class="cart-container" id="cartContainer">
+        <div class="cart-header" id="cartHeader">
+            <div class="cart-title">
+                <i class="fas fa-shopping-cart"></i>
+                Your Selected Plans
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+            <div class="cart-toggle">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+        </div>
+        <div class="cart-content">
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be added here dynamically -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">0 ETB</span>
+                </div>
+                <div class="cart-actions">
+                    <button class="cart-btn cart-btn-checkout" id="checkoutBtn">Proceed to Checkout</button>
+                    <button class="cart-btn cart-btn-clear" id="clearCartBtn">Clear Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1169,7 +1556,7 @@
                 
                 <div class="footer-column">
                     <h3>Quick Links</h3>
-                    <ul class="footer-links">
+                    <ul class="footer-links" style="margin-left:-3em; margin-right:5em" >
                         <li><a href="#home">Home</a></li>
                         <li><a href="#packages">Packages</a></li>
                         <li><a href="#services">Services</a></li>
@@ -1208,6 +1595,285 @@
     </footer>
 
     <script>
+        // Shopping Cart Functionality
+        const cartContainer = document.getElementById('cartContainer');
+        const cartHeader = document.getElementById('cartHeader');
+        const cartItems = document.getElementById('cartItems');
+        const cartCount = document.getElementById('cartCount');
+        const cartTotal = document.getElementById('cartTotal');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const clearCartBtn = document.getElementById('clearCartBtn');
+        const selectPlanButtons = document.querySelectorAll('.select-plan-btn');
+        
+        let cart = [];
+        
+        // Initialize cart from localStorage if available
+        if (localStorage.getItem('cart')) {
+            cart = JSON.parse(localStorage.getItem('cart'));
+            updateCart();
+        }
+        
+        // Select Plan functionality
+        selectPlanButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const id = button.getAttribute('data-id');
+                const name = button.getAttribute('data-name');
+                const price = parseInt(button.getAttribute('data-price'));
+                const image = button.getAttribute('data-image');
+                
+                // Check if item already in cart
+                const existingItem = cart.find(item => item.id === id);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id,
+                        name,
+                        price,
+                        image,
+                        quantity: 1
+                    });
+                }
+                
+                // Update cart UI
+                updateCart();
+                
+                // Show cart if it's hidden
+                cartContainer.classList.add('active');
+                
+                // Visual feedback
+                button.classList.add('selected');
+                button.innerHTML = '<i class="fas fa-check"></i> Plan Selected';
+                
+                // Show notification
+                showNotification('success', 'Plan Added!', `"${name}" has been added to your selected plans.`);
+                
+                setTimeout(() => {
+                    button.classList.remove('selected');
+                    button.innerHTML = '<i class="fas fa-plus-circle"></i> Select Plan';
+                }, 3000);
+            });
+        });
+        
+        // Update cart UI
+        function updateCart() {
+            // Save cart to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Update cart count
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            // Update cart items
+            cartItems.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Your cart is empty</p>
+                        <p>Add plans to get started</p>
+                    </div>
+                `;
+                cartTotal.textContent = '0 ETB';
+                return;
+            }
+            
+            let totalPrice = 0;
+            
+            cart.forEach(item => {
+                totalPrice += item.price * item.quantity;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="cart-item-image">
+                        <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">${item.price} ETB x ${item.quantity}</div>
+                    </div>
+                    <button class="cart-item-remove" data-id="${item.id}">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                `;
+                
+                cartItems.appendChild(cartItem);
+            });
+            
+            // Update total
+            cartTotal.textContent = `${totalPrice} ETB`;
+            
+            // Add event listeners to remove buttons
+            document.querySelectorAll('.cart-item-remove').forEach(button => {
+                button.addEventListener('click', () => {
+                    const id = button.getAttribute('data-id');
+                    removeFromCart(id);
+                });
+            });
+        }
+        
+        // Remove item from cart
+        function removeFromCart(id) {
+            const item = cart.find(item => item.id === id);
+            cart = cart.filter(item => item.id !== id);
+            updateCart();
+            
+            // Show notification
+            showNotification('info', 'Plan Removed', `"${item.name}" has been removed from your selected plans.`);
+        }
+        
+        // Toggle cart visibility
+        cartHeader.addEventListener('click', () => {
+            cartContainer.classList.toggle('active');
+        });
+        
+        // Clear cart
+        clearCartBtn.addEventListener('click', () => {
+            if (cart.length === 0) return;
+            
+            cart = [];
+            updateCart();
+            
+            // Show notification
+            showNotification('info', 'Cart Cleared', 'All plans have been removed from your cart.');
+        });
+        
+        // Checkout
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                showNotification('warning', 'Empty Cart', 'Please add plans before checking out.');
+                return;
+            }
+            
+            // Show notification
+            showNotification('success', 'Checkout Initiated', 'Thank you for your interest! Our team will contact you shortly to complete your order.');
+            
+            // In a real implementation, this would redirect to a checkout page
+            setTimeout(() => {
+                cart = [];
+                updateCart();
+                cartContainer.classList.remove('active');
+            }, 3000);
+        });
+        
+        // Notification System
+        function showNotification(type, title, message) {
+            const notificationContainer = document.getElementById('notificationContainer');
+            const notificationId = 'notification-' + Date.now();
+            
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.id = notificationId;
+            
+            let icon = 'fas fa-info-circle';
+            if (type === 'success') icon = 'fas fa-check-circle';
+            if (type === 'warning') icon = 'fas fa-exclamation-triangle';
+            
+            notification.innerHTML = `
+                <div class="notification-icon">
+                    <i class="${icon}"></i>
+                </div>
+                <div class="notification-content">
+                    <div class="notification-title">${title}</div>
+                    <div class="notification-message">${message}</div>
+                </div>
+                <button class="notification-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+            
+            notificationContainer.appendChild(notification);
+            
+            // Show notification with animation
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 10);
+            
+            // Add event listener to close button
+            notification.querySelector('.notification-close').addEventListener('click', () => {
+                closeNotification(notificationId);
+            });
+            
+            // Auto-close after 5 seconds
+            setTimeout(() => {
+                closeNotification(notificationId);
+            }, 5000);
+        }
+        
+        function closeNotification(id) {
+            const notification = document.getElementById(id);
+            if (notification) {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 400);
+            }
+        }
+        
+        // Comment Form Submission with Notification
+        const commentForm = document.getElementById('commentForm');
+        
+        commentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const comment = document.getElementById('comment').value;
+            
+            // In a real implementation, you would send this data to a server
+            // For now, we'll just show a success notification and reset the form
+            
+            // Show notification
+            showNotification('success', 'Feedback Submitted!', 'Thank you for your feedback. We appreciate your input.');
+            
+            // Reset form
+            commentForm.reset();
+            
+            // Add comment to the list (in a real app, this would come from the server)
+            addCommentToList(name, comment);
+        });
+        
+        function addCommentToList(name, comment) {
+            const commentsList = document.getElementById('commentsList');
+            const emptyState = document.getElementById('emptyState');
+            
+            // Hide empty state if it's shown
+            emptyState.style.display = 'none';
+            
+            // Create new comment element
+            const commentElement = document.createElement('div');
+            commentElement.className = 'comment';
+            
+            // Get current date
+            const now = new Date();
+            const dateString = now.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric' 
+            });
+            
+            commentElement.innerHTML = `
+                <div class="comment-header">
+                    <div class="avatar">${name.charAt(0).toUpperCase()}</div>
+                    <div class="comment-author">${name}</div>
+                    <div class="comment-date">${dateString}</div>
+                </div>
+                <div class="comment-content">${comment}</div>
+            `;
+            
+            // Add to the top of the comments list
+            if (commentsList.firstChild) {
+                commentsList.insertBefore(commentElement, commentsList.firstChild);
+            } else {
+                commentsList.appendChild(commentElement);
+            }
+        }
+        
         // Mobile Menu Toggle
         const menuToggle = document.getElementById('menu-toggle');
         const navLinks = document.getElementById('nav-links');
@@ -1299,8 +1965,6 @@
         window.addEventListener('scroll', animateOnScroll);
         // Initial check
         window.addEventListener('load', animateOnScroll);
-
-       
     </script>
 </body>
 </html>
