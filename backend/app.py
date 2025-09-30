@@ -9,7 +9,7 @@ def signup():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
-        db = sqlite3.connect('../database/database.db')
+        db = sqlite3.connect('database/database.db')
         cursor = db.cursor()
         try:
             cursor.execute("INSERT INTO users (username,password) VALUES(?,?)",(username,password))
@@ -27,7 +27,7 @@ def admin():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
-        db = sqlite3.connect('../database/database.db')
+        db = sqlite3.connect('database/database.db')
         cursor = db.cursor()
         cursor.execute("SELECT * FROM admin WHERE username = ? AND password = ?",(username,password))
         fetch = cursor.fetchone()
@@ -40,6 +40,7 @@ def admin():
 @app.route('/home')
 @app.route('/')
 def home():
+    a = ''
     username = session.get("username")
     if username:
         a = username[0].upper()
@@ -50,7 +51,7 @@ def home():
 
 @app.route('/admin/dashboard')
 def admindashoboard():
-    db = sqlite3.connect('../database/database.db')
+    db = sqlite3.connect('database/database.db')
     cursor = db.cursor()
     cursor.execute("SELECT  COUNT(*) FROM comment")
     comment = cursor.fetchone()[0]
@@ -65,7 +66,7 @@ def admindashoboard():
 
 @app.route('/delete/<string:id>',methods=["POST","GET"])
 def dele(id):
-    db = sqlite3.connect('../database/database.db')
+    db = sqlite3.connect('database/database.db')
     cursor = db.cursor()
     cursor.execute("DELETE FROM comment WHERE id = ?",(id,))
     db.commit()
@@ -84,7 +85,7 @@ def service():
         filetype,_ = mimetypes.guess_extension(photo.filename)
         encode = base64.b64encode(photo.read()).decode()
         h = f"data:{filetype};base64,{encode}"
-        db = sqlite3.connect('../database/database.db')
+        db = sqlite3.connect('database/database.db')
         cursor = db.cursor()
         cursor.execute("INSERT INTO service (name , photo , price , per , des) VALUES(?,?,?,?,?)",(name,h,price,per,des))
         db.commit()
@@ -98,7 +99,7 @@ def comment():
         feedback = request.form["feedback"]
         date = datetime.now().strftime("%B %A %y") 
         id = str(uuid.uuid4())
-        db = sqlite3.connect('../database/database.db')
+        db = sqlite3.connect('database/database.db')
         cursor = db.cursor()
         cursor.execute("INSERT INTO comment (username,email,feedback,date,id) VALUES(?,?,?,?,?)",(username,email,feedback,date,id))
         db.commit()
@@ -106,7 +107,7 @@ def comment():
 
 @app.route('/admin/comments')
 def comments():
-    db = sqlite3.connect('../database/database.db')
+    db = sqlite3.connect('database/database.db')
     cursor = db.cursor()    
     cursor.execute("SELECT * FROM comment")
     fetch = cursor.fetchall()
@@ -114,7 +115,7 @@ def comments():
 
 @app.route('/admin/users') 
 def users():
-    db = sqlite3.connect('../database/database.db')
+    db = sqlite3.connect('database/database.db')
     cursor = db.cursor()    
     cursor.execute("SELECT * FROM users")
     fetch = cursor.fetchall()
